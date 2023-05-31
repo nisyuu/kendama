@@ -8,17 +8,17 @@ Gem::Specification.new do |spec|
   spec.authors = ["uichi"]
   spec.email = ["37263474+uichi@users.noreply.github.com"]
 
-  spec.summary = "TODO: Write a short summary, because RubyGems requires one."
-  spec.description = "TODO: Write a longer description or delete this line."
-  spec.homepage = "TODO: Put your gem's website or public repo URL here."
+  spec.summary = "適格請求書発行事業者公表システムWeb-APIのラッパー"
+  spec.description = "国税庁が提供するインボイス制度適格請求書発行事業者公表システムWeb-APIを使用するためのRuby向けラッパーです。"
+  spec.homepage = "https://rubygems.org/gems/kendama"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.6.0"
 
-  spec.metadata["allowed_push_host"] = "TODO: Set to your gem server 'https://example.com'"
+  # spec.metadata["allowed_push_host"] = "TODO: Set to your gem server 'https://example.com'"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "TODO: Put your gem's public repo URL here."
-  spec.metadata["changelog_uri"] = "TODO: Put your gem's CHANGELOG.md URL here."
+  spec.metadata["source_code_uri"] = "https://github.com/uichi/kendama"
+  spec.metadata["changelog_uri"] = "https://github.com/uichi/kendama/blob/develop/CHANGELOG.md"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
