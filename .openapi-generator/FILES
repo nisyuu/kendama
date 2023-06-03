@@ -1,0 +1,16 @@
+.gitlab-ci.yml
+.travis.yml
+docs/Announcement.md
+docs/ResponseBody.md
+docs/V1Api.md
+git_push.sh
+lib/kendama.rb
+lib/kendama/api/v1_api.rb
+lib/kendama/api_client.rb
+lib/kendama/api_error.rb
+lib/kendama/configuration.rb
+lib/kendama/models/announcement.rb
+lib/kendama/models/response_body.rb
+spec/api_client_spec.rb
+spec/configuration_spec.rb
+spec/spec_helper.rb
