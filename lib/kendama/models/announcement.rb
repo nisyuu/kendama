@@ -362,48 +362,16 @@ module Kendama
         invalid_properties.push('invalid value for "registration_date", registration_date cannot be nil.')
       end
 
-      if @registration_date.to_s.length > 10
-        invalid_properties.push('invalid value for "registration_date", the character length must be smaller than or equal to 10.')
-      end
-
-      if @registration_date.to_s.length < 10
-        invalid_properties.push('invalid value for "registration_date", the character length must be great than or equal to 10.')
-      end
-
       if @update_date.nil?
         invalid_properties.push('invalid value for "update_date", update_date cannot be nil.')
-      end
-
-      if @update_date.to_s.length > 10
-        invalid_properties.push('invalid value for "update_date", the character length must be smaller than or equal to 10.')
-      end
-
-      if @update_date.to_s.length < 10
-        invalid_properties.push('invalid value for "update_date", the character length must be great than or equal to 10.')
       end
 
       if @disposal_date.nil?
         invalid_properties.push('invalid value for "disposal_date", disposal_date cannot be nil.')
       end
 
-      if @disposal_date.to_s.length > 10
-        invalid_properties.push('invalid value for "disposal_date", the character length must be smaller than or equal to 10.')
-      end
-
-      if @disposal_date.to_s.length < 10
-        invalid_properties.push('invalid value for "disposal_date", the character length must be great than or equal to 10.')
-      end
-
       if @expire_date.nil?
         invalid_properties.push('invalid value for "expire_date", expire_date cannot be nil.')
-      end
-
-      if @expire_date.to_s.length > 10
-        invalid_properties.push('invalid value for "expire_date", the character length must be smaller than or equal to 10.')
-      end
-
-      if @expire_date.to_s.length < 10
-        invalid_properties.push('invalid value for "expire_date", the character length must be great than or equal to 10.')
       end
 
       if @address.nil?
@@ -558,17 +526,9 @@ module Kendama
       return false if @latest.to_s.length > 1
       return false if @latest.to_s.length < 1
       return false if @registration_date.nil?
-      return false if @registration_date.to_s.length > 10
-      return false if @registration_date.to_s.length < 10
       return false if @update_date.nil?
-      return false if @update_date.to_s.length > 10
-      return false if @update_date.to_s.length < 10
       return false if @disposal_date.nil?
-      return false if @disposal_date.to_s.length > 10
-      return false if @disposal_date.to_s.length < 10
       return false if @expire_date.nil?
-      return false if @expire_date.to_s.length > 10
-      return false if @expire_date.to_s.length < 10
       return false if @address.nil?
       return false if @address.to_s.length > 600
       return false if @address_prefecture_code.nil?
@@ -727,78 +687,6 @@ module Kendama
       end
 
       @latest = latest
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] registration_date Value to be assigned
-    def registration_date=(registration_date)
-      if registration_date.nil?
-        fail ArgumentError, 'registration_date cannot be nil'
-      end
-
-      if registration_date.to_s.length > 10
-        fail ArgumentError, 'invalid value for "registration_date", the character length must be smaller than or equal to 10.'
-      end
-
-      if registration_date.to_s.length < 10
-        fail ArgumentError, 'invalid value for "registration_date", the character length must be great than or equal to 10.'
-      end
-
-      @registration_date = registration_date
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] update_date Value to be assigned
-    def update_date=(update_date)
-      if update_date.nil?
-        fail ArgumentError, 'update_date cannot be nil'
-      end
-
-      if update_date.to_s.length > 10
-        fail ArgumentError, 'invalid value for "update_date", the character length must be smaller than or equal to 10.'
-      end
-
-      if update_date.to_s.length < 10
-        fail ArgumentError, 'invalid value for "update_date", the character length must be great than or equal to 10.'
-      end
-
-      @update_date = update_date
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] disposal_date Value to be assigned
-    def disposal_date=(disposal_date)
-      if disposal_date.nil?
-        fail ArgumentError, 'disposal_date cannot be nil'
-      end
-
-      if disposal_date.to_s.length > 10
-        fail ArgumentError, 'invalid value for "disposal_date", the character length must be smaller than or equal to 10.'
-      end
-
-      if disposal_date.to_s.length < 10
-        fail ArgumentError, 'invalid value for "disposal_date", the character length must be great than or equal to 10.'
-      end
-
-      @disposal_date = disposal_date
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] expire_date Value to be assigned
-    def expire_date=(expire_date)
-      if expire_date.nil?
-        fail ArgumentError, 'expire_date cannot be nil'
-      end
-
-      if expire_date.to_s.length > 10
-        fail ArgumentError, 'invalid value for "expire_date", the character length must be smaller than or equal to 10.'
-      end
-
-      if expire_date.to_s.length < 10
-        fail ArgumentError, 'invalid value for "expire_date", the character length must be great than or equal to 10.'
-      end
-
-      @expire_date = expire_date
     end
 
     # Custom attribute writer method with validation
