@@ -21,3 +21,13 @@
 #docs/*.md
 # Then explicitly reverse the ignore rule for a single file:
 #!docs/README.md
+
+.gitignore
+.rspec
+.rubocop.yml
+Gemfile
+kendama.gemspec
+Rakefile
+README.md
+
+lib/kendama/version.rb
