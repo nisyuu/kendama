@@ -104,14 +104,6 @@ module Kendama
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if !@last_update_date.nil? && @last_update_date.to_s.length > 10
-        invalid_properties.push('invalid value for "last_update_date", the character length must be smaller than or equal to 10.')
-      end
-
-      if !@last_update_date.nil? && @last_update_date.to_s.length < 10
-        invalid_properties.push('invalid value for "last_update_date", the character length must be great than or equal to 10.')
-      end
-
       if !@count.nil? && @count.to_s.length > 8
         invalid_properties.push('invalid value for "count", the character length must be smaller than or equal to 8.')
       end
@@ -142,8 +134,6 @@ module Kendama
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if !@last_update_date.nil? && @last_update_date.to_s.length > 10
-      return false if !@last_update_date.nil? && @last_update_date.to_s.length < 10
       return false if !@count.nil? && @count.to_s.length > 8
       return false if !@count.nil? && @count.to_s.length < 1
       return false if !@divide_number.nil? && @divide_number.to_s.length > 6
@@ -151,20 +141,6 @@ module Kendama
       return false if !@divide_size.nil? && @divide_size.to_s.length > 6
       return false if !@divide_size.nil? && @divide_size.to_s.length < 1
       true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] last_update_date Value to be assigned
-    def last_update_date=(last_update_date)
-      if !last_update_date.nil? && last_update_date.to_s.length > 10
-        fail ArgumentError, 'invalid value for "last_update_date", the character length must be smaller than or equal to 10.'
-      end
-
-      if !last_update_date.nil? && last_update_date.to_s.length < 10
-        fail ArgumentError, 'invalid value for "last_update_date", the character length must be great than or equal to 10.'
-      end
-
-      @last_update_date = last_update_date
     end
 
     # Custom attribute writer method with validation

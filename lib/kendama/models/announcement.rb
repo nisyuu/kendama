@@ -302,60 +302,20 @@ module Kendama
         invalid_properties.push('invalid value for "process", process cannot be nil.')
       end
 
-      if @process.to_s.length > 2
-        invalid_properties.push('invalid value for "process", the character length must be smaller than or equal to 2.')
-      end
-
-      if @process.to_s.length < 2
-        invalid_properties.push('invalid value for "process", the character length must be great than or equal to 2.')
-      end
-
       if @correct.nil?
         invalid_properties.push('invalid value for "correct", correct cannot be nil.')
-      end
-
-      if @correct.to_s.length > 1
-        invalid_properties.push('invalid value for "correct", the character length must be smaller than or equal to 1.')
-      end
-
-      if @correct.to_s.length < 1
-        invalid_properties.push('invalid value for "correct", the character length must be great than or equal to 1.')
       end
 
       if @kind.nil?
         invalid_properties.push('invalid value for "kind", kind cannot be nil.')
       end
 
-      if @kind.to_s.length > 1
-        invalid_properties.push('invalid value for "kind", the character length must be smaller than or equal to 1.')
-      end
-
-      if @kind.to_s.length < 1
-        invalid_properties.push('invalid value for "kind", the character length must be great than or equal to 1.')
-      end
-
       if @country.nil?
         invalid_properties.push('invalid value for "country", country cannot be nil.')
       end
 
-      if @country.to_s.length > 1
-        invalid_properties.push('invalid value for "country", the character length must be smaller than or equal to 1.')
-      end
-
-      if @country.to_s.length < 1
-        invalid_properties.push('invalid value for "country", the character length must be great than or equal to 1.')
-      end
-
       if @latest.nil?
         invalid_properties.push('invalid value for "latest", latest cannot be nil.')
-      end
-
-      if @latest.to_s.length > 1
-        invalid_properties.push('invalid value for "latest", the character length must be smaller than or equal to 1.')
-      end
-
-      if @latest.to_s.length < 1
-        invalid_properties.push('invalid value for "latest", the character length must be great than or equal to 1.')
       end
 
       if @registration_date.nil?
@@ -386,24 +346,8 @@ module Kendama
         invalid_properties.push('invalid value for "address_prefecture_code", address_prefecture_code cannot be nil.')
       end
 
-      if @address_prefecture_code.to_s.length > 2
-        invalid_properties.push('invalid value for "address_prefecture_code", the character length must be smaller than or equal to 2.')
-      end
-
-      if @address_prefecture_code.to_s.length < 2
-        invalid_properties.push('invalid value for "address_prefecture_code", the character length must be great than or equal to 2.')
-      end
-
       if @address_city_code.nil?
         invalid_properties.push('invalid value for "address_city_code", address_city_code cannot be nil.')
-      end
-
-      if @address_city_code.to_s.length > 3
-        invalid_properties.push('invalid value for "address_city_code", the character length must be smaller than or equal to 3.')
-      end
-
-      if @address_city_code.to_s.length < 3
-        invalid_properties.push('invalid value for "address_city_code", the character length must be great than or equal to 3.')
       end
 
       if @address_request.nil?
@@ -418,24 +362,8 @@ module Kendama
         invalid_properties.push('invalid value for "address_request_prefecture_code", address_request_prefecture_code cannot be nil.')
       end
 
-      if @address_request_prefecture_code.to_s.length > 2
-        invalid_properties.push('invalid value for "address_request_prefecture_code", the character length must be smaller than or equal to 2.')
-      end
-
-      if @address_request_prefecture_code.to_s.length < 2
-        invalid_properties.push('invalid value for "address_request_prefecture_code", the character length must be great than or equal to 2.')
-      end
-
       if @address_request_city_code.nil?
         invalid_properties.push('invalid value for "address_request_city_code", address_request_city_code cannot be nil.')
-      end
-
-      if @address_request_city_code.to_s.length > 3
-        invalid_properties.push('invalid value for "address_request_city_code", the character length must be smaller than or equal to 3.')
-      end
-
-      if @address_request_city_code.to_s.length < 3
-        invalid_properties.push('invalid value for "address_request_city_code", the character length must be great than or equal to 3.')
       end
 
       if @kana.nil?
@@ -462,24 +390,8 @@ module Kendama
         invalid_properties.push('invalid value for "address_inside", the character length must be smaller than or equal to 300.')
       end
 
-      if !@address_inside_prefecture_code.nil? && @address_inside_prefecture_code.to_s.length > 2
-        invalid_properties.push('invalid value for "address_inside_prefecture_code", the character length must be smaller than or equal to 2.')
-      end
-
-      if !@address_inside_prefecture_code.nil? && @address_inside_prefecture_code.to_s.length < 2
-        invalid_properties.push('invalid value for "address_inside_prefecture_code", the character length must be great than or equal to 2.')
-      end
-
       if @address_inside_city_code.nil?
         invalid_properties.push('invalid value for "address_inside_city_code", address_inside_city_code cannot be nil.')
-      end
-
-      if @address_inside_city_code.to_s.length > 3
-        invalid_properties.push('invalid value for "address_inside_city_code", the character length must be smaller than or equal to 3.')
-      end
-
-      if @address_inside_city_code.to_s.length < 3
-        invalid_properties.push('invalid value for "address_inside_city_code", the character length must be great than or equal to 3.')
       end
 
       if @trade_name.nil?
@@ -511,20 +423,10 @@ module Kendama
       return false if @registrated_number.to_s.length > 14
       return false if @registrated_number.to_s.length < 14
       return false if @process.nil?
-      return false if @process.to_s.length > 2
-      return false if @process.to_s.length < 2
       return false if @correct.nil?
-      return false if @correct.to_s.length > 1
-      return false if @correct.to_s.length < 1
       return false if @kind.nil?
-      return false if @kind.to_s.length > 1
-      return false if @kind.to_s.length < 1
       return false if @country.nil?
-      return false if @country.to_s.length > 1
-      return false if @country.to_s.length < 1
       return false if @latest.nil?
-      return false if @latest.to_s.length > 1
-      return false if @latest.to_s.length < 1
       return false if @registration_date.nil?
       return false if @update_date.nil?
       return false if @disposal_date.nil?
@@ -532,30 +434,18 @@ module Kendama
       return false if @address.nil?
       return false if @address.to_s.length > 600
       return false if @address_prefecture_code.nil?
-      return false if @address_prefecture_code.to_s.length > 2
-      return false if @address_prefecture_code.to_s.length < 2
       return false if @address_city_code.nil?
-      return false if @address_city_code.to_s.length > 3
-      return false if @address_city_code.to_s.length < 3
       return false if @address_request.nil?
       return false if @address_request.to_s.length > 600
       return false if @address_request_prefecture_code.nil?
-      return false if @address_request_prefecture_code.to_s.length > 2
-      return false if @address_request_prefecture_code.to_s.length < 2
       return false if @address_request_city_code.nil?
-      return false if @address_request_city_code.to_s.length > 3
-      return false if @address_request_city_code.to_s.length < 3
       return false if @kana.nil?
       return false if @kana.to_s.length > 500
       return false if @name.nil?
       return false if @name.to_s.length > 300
       return false if @address_inside.nil?
       return false if @address_inside.to_s.length > 300
-      return false if !@address_inside_prefecture_code.nil? && @address_inside_prefecture_code.to_s.length > 2
-      return false if !@address_inside_prefecture_code.nil? && @address_inside_prefecture_code.to_s.length < 2
       return false if @address_inside_city_code.nil?
-      return false if @address_inside_city_code.to_s.length > 3
-      return false if @address_inside_city_code.to_s.length < 3
       return false if @trade_name.nil?
       return false if @trade_name.to_s.length > 200
       return false if @popular_name_previous_name.nil?
@@ -600,96 +490,6 @@ module Kendama
     end
 
     # Custom attribute writer method with validation
-    # @param [Object] process Value to be assigned
-    def process=(process)
-      if process.nil?
-        fail ArgumentError, 'process cannot be nil'
-      end
-
-      if process.to_s.length > 2
-        fail ArgumentError, 'invalid value for "process", the character length must be smaller than or equal to 2.'
-      end
-
-      if process.to_s.length < 2
-        fail ArgumentError, 'invalid value for "process", the character length must be great than or equal to 2.'
-      end
-
-      @process = process
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] correct Value to be assigned
-    def correct=(correct)
-      if correct.nil?
-        fail ArgumentError, 'correct cannot be nil'
-      end
-
-      if correct.to_s.length > 1
-        fail ArgumentError, 'invalid value for "correct", the character length must be smaller than or equal to 1.'
-      end
-
-      if correct.to_s.length < 1
-        fail ArgumentError, 'invalid value for "correct", the character length must be great than or equal to 1.'
-      end
-
-      @correct = correct
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] kind Value to be assigned
-    def kind=(kind)
-      if kind.nil?
-        fail ArgumentError, 'kind cannot be nil'
-      end
-
-      if kind.to_s.length > 1
-        fail ArgumentError, 'invalid value for "kind", the character length must be smaller than or equal to 1.'
-      end
-
-      if kind.to_s.length < 1
-        fail ArgumentError, 'invalid value for "kind", the character length must be great than or equal to 1.'
-      end
-
-      @kind = kind
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] country Value to be assigned
-    def country=(country)
-      if country.nil?
-        fail ArgumentError, 'country cannot be nil'
-      end
-
-      if country.to_s.length > 1
-        fail ArgumentError, 'invalid value for "country", the character length must be smaller than or equal to 1.'
-      end
-
-      if country.to_s.length < 1
-        fail ArgumentError, 'invalid value for "country", the character length must be great than or equal to 1.'
-      end
-
-      @country = country
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] latest Value to be assigned
-    def latest=(latest)
-      if latest.nil?
-        fail ArgumentError, 'latest cannot be nil'
-      end
-
-      if latest.to_s.length > 1
-        fail ArgumentError, 'invalid value for "latest", the character length must be smaller than or equal to 1.'
-      end
-
-      if latest.to_s.length < 1
-        fail ArgumentError, 'invalid value for "latest", the character length must be great than or equal to 1.'
-      end
-
-      @latest = latest
-    end
-
-    # Custom attribute writer method with validation
     # @param [Object] address Value to be assigned
     def address=(address)
       if address.nil?
@@ -704,42 +504,6 @@ module Kendama
     end
 
     # Custom attribute writer method with validation
-    # @param [Object] address_prefecture_code Value to be assigned
-    def address_prefecture_code=(address_prefecture_code)
-      if address_prefecture_code.nil?
-        fail ArgumentError, 'address_prefecture_code cannot be nil'
-      end
-
-      if address_prefecture_code.to_s.length > 2
-        fail ArgumentError, 'invalid value for "address_prefecture_code", the character length must be smaller than or equal to 2.'
-      end
-
-      if address_prefecture_code.to_s.length < 2
-        fail ArgumentError, 'invalid value for "address_prefecture_code", the character length must be great than or equal to 2.'
-      end
-
-      @address_prefecture_code = address_prefecture_code
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] address_city_code Value to be assigned
-    def address_city_code=(address_city_code)
-      if address_city_code.nil?
-        fail ArgumentError, 'address_city_code cannot be nil'
-      end
-
-      if address_city_code.to_s.length > 3
-        fail ArgumentError, 'invalid value for "address_city_code", the character length must be smaller than or equal to 3.'
-      end
-
-      if address_city_code.to_s.length < 3
-        fail ArgumentError, 'invalid value for "address_city_code", the character length must be great than or equal to 3.'
-      end
-
-      @address_city_code = address_city_code
-    end
-
-    # Custom attribute writer method with validation
     # @param [Object] address_request Value to be assigned
     def address_request=(address_request)
       if address_request.nil?
@@ -751,42 +515,6 @@ module Kendama
       end
 
       @address_request = address_request
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] address_request_prefecture_code Value to be assigned
-    def address_request_prefecture_code=(address_request_prefecture_code)
-      if address_request_prefecture_code.nil?
-        fail ArgumentError, 'address_request_prefecture_code cannot be nil'
-      end
-
-      if address_request_prefecture_code.to_s.length > 2
-        fail ArgumentError, 'invalid value for "address_request_prefecture_code", the character length must be smaller than or equal to 2.'
-      end
-
-      if address_request_prefecture_code.to_s.length < 2
-        fail ArgumentError, 'invalid value for "address_request_prefecture_code", the character length must be great than or equal to 2.'
-      end
-
-      @address_request_prefecture_code = address_request_prefecture_code
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] address_request_city_code Value to be assigned
-    def address_request_city_code=(address_request_city_code)
-      if address_request_city_code.nil?
-        fail ArgumentError, 'address_request_city_code cannot be nil'
-      end
-
-      if address_request_city_code.to_s.length > 3
-        fail ArgumentError, 'invalid value for "address_request_city_code", the character length must be smaller than or equal to 3.'
-      end
-
-      if address_request_city_code.to_s.length < 3
-        fail ArgumentError, 'invalid value for "address_request_city_code", the character length must be great than or equal to 3.'
-      end
-
-      @address_request_city_code = address_request_city_code
     end
 
     # Custom attribute writer method with validation
@@ -829,38 +557,6 @@ module Kendama
       end
 
       @address_inside = address_inside
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] address_inside_prefecture_code Value to be assigned
-    def address_inside_prefecture_code=(address_inside_prefecture_code)
-      if !address_inside_prefecture_code.nil? && address_inside_prefecture_code.to_s.length > 2
-        fail ArgumentError, 'invalid value for "address_inside_prefecture_code", the character length must be smaller than or equal to 2.'
-      end
-
-      if !address_inside_prefecture_code.nil? && address_inside_prefecture_code.to_s.length < 2
-        fail ArgumentError, 'invalid value for "address_inside_prefecture_code", the character length must be great than or equal to 2.'
-      end
-
-      @address_inside_prefecture_code = address_inside_prefecture_code
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] address_inside_city_code Value to be assigned
-    def address_inside_city_code=(address_inside_city_code)
-      if address_inside_city_code.nil?
-        fail ArgumentError, 'address_inside_city_code cannot be nil'
-      end
-
-      if address_inside_city_code.to_s.length > 3
-        fail ArgumentError, 'invalid value for "address_inside_city_code", the character length must be smaller than or equal to 3.'
-      end
-
-      if address_inside_city_code.to_s.length < 3
-        fail ArgumentError, 'invalid value for "address_inside_city_code", the character length must be great than or equal to 3.'
-      end
-
-      @address_inside_city_code = address_inside_city_code
     end
 
     # Custom attribute writer method with validation
