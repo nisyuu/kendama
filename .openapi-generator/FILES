@@ -1,5 +1,6 @@
 .gitlab-ci.yml
 .travis.yml
+README.md
 docs/Announcement.md
 docs/ResponseBody.md
 docs/V1Api.md

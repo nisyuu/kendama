@@ -290,14 +290,6 @@ module Kendama
         invalid_properties.push('invalid value for "registrated_number", registrated_number cannot be nil.')
       end
 
-      if @registrated_number.to_s.length > 14
-        invalid_properties.push('invalid value for "registrated_number", the character length must be smaller than or equal to 14.')
-      end
-
-      if @registrated_number.to_s.length < 14
-        invalid_properties.push('invalid value for "registrated_number", the character length must be great than or equal to 14.')
-      end
-
       if @process.nil?
         invalid_properties.push('invalid value for "process", process cannot be nil.')
       end
@@ -420,8 +412,6 @@ module Kendama
       return false if @sequence_number.to_s.length > 8
       return false if @sequence_number.to_s.length < 1
       return false if @registrated_number.nil?
-      return false if @registrated_number.to_s.length > 14
-      return false if @registrated_number.to_s.length < 14
       return false if @process.nil?
       return false if @correct.nil?
       return false if @kind.nil?
@@ -469,24 +459,6 @@ module Kendama
       end
 
       @sequence_number = sequence_number
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] registrated_number Value to be assigned
-    def registrated_number=(registrated_number)
-      if registrated_number.nil?
-        fail ArgumentError, 'registrated_number cannot be nil'
-      end
-
-      if registrated_number.to_s.length > 14
-        fail ArgumentError, 'invalid value for "registrated_number", the character length must be smaller than or equal to 14.'
-      end
-
-      if registrated_number.to_s.length < 14
-        fail ArgumentError, 'invalid value for "registrated_number", the character length must be great than or equal to 14.'
-      end
-
-      @registrated_number = registrated_number
     end
 
     # Custom attribute writer method with validation
