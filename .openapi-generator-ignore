@@ -28,6 +28,5 @@
 Gemfile
 kendama.gemspec
 Rakefile
-README.md
 
 lib/kendama/version.rb
