@@ -216,5 +216,95 @@ module Kendama
       end
       return data, status_code, headers
     end
+
+    # 登録番号と日付を指定して情報を取得
+    # 登録番号及び指定された日付を基準日とした直近の登録年月日、取消年月日、失効年月日に紐づく情報を取得
+    # @param id [String] 
+    # @param number [String] 
+    # @param day [Date] 
+    # @param type [String] 
+    # @param [Hash] opts the optional parameters
+    # @return [ResponseBody]
+    def get_announcement_by_valid(id, number, day, type, opts = {})
+      data, _status_code, _headers = get_announcement_by_valid_with_http_info(id, number, day, type, opts)
+      data
+    end
+
+    # 登録番号と日付を指定して情報を取得
+    # 登録番号及び指定された日付を基準日とした直近の登録年月日、取消年月日、失効年月日に紐づく情報を取得
+    # @param id [String] 
+    # @param number [String] 
+    # @param day [Date] 
+    # @param type [String] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(ResponseBody, Integer, Hash)>] ResponseBody data, response status code and response headers
+    def get_announcement_by_valid_with_http_info(id, number, day, type, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: V1Api.get_announcement_by_valid ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling V1Api.get_announcement_by_valid"
+      end
+      # verify the required parameter 'number' is set
+      if @api_client.config.client_side_validation && number.nil?
+        fail ArgumentError, "Missing the required parameter 'number' when calling V1Api.get_announcement_by_valid"
+      end
+      # verify the required parameter 'day' is set
+      if @api_client.config.client_side_validation && day.nil?
+        fail ArgumentError, "Missing the required parameter 'day' when calling V1Api.get_announcement_by_valid"
+      end
+      # verify the required parameter 'type' is set
+      if @api_client.config.client_side_validation && type.nil?
+        fail ArgumentError, "Missing the required parameter 'type' when calling V1Api.get_announcement_by_valid"
+      end
+      # verify enum value
+      allowable_values = ["21"]
+      if @api_client.config.client_side_validation && !allowable_values.include?(type)
+        fail ArgumentError, "invalid value for \"type\", must be one of #{allowable_values}"
+      end
+      # resource path
+      local_var_path = '/1/valid'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'id'] = id
+      query_params[:'number'] = number
+      query_params[:'day'] = day
+      query_params[:'type'] = type
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'ResponseBody'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"V1Api.get_announcement_by_valid",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: V1Api#get_announcement_by_valid\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
   end
 end
