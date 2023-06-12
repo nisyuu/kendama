@@ -87,6 +87,28 @@ module Kendama
     # 通称・旧姓
     attr_accessor :popular_name_previous_name
 
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -413,10 +435,20 @@ module Kendama
       return false if @sequence_number.to_s.length < 1
       return false if @registrated_number.nil?
       return false if @process.nil?
+      process_validator = EnumAttributeValidator.new('String', ["01", "02", "03", "04", "99"])
+      return false unless process_validator.valid?(@process)
       return false if @correct.nil?
+      correct_validator = EnumAttributeValidator.new('String', ["0", "1", ""])
+      return false unless correct_validator.valid?(@correct)
       return false if @kind.nil?
+      kind_validator = EnumAttributeValidator.new('String', ["1", "2"])
+      return false unless kind_validator.valid?(@kind)
       return false if @country.nil?
+      country_validator = EnumAttributeValidator.new('String', ["1", "2", "3"])
+      return false unless country_validator.valid?(@country)
       return false if @latest.nil?
+      latest_validator = EnumAttributeValidator.new('String', ["0", "1"])
+      return false unless latest_validator.valid?(@latest)
       return false if @registration_date.nil?
       return false if @update_date.nil?
       return false if @disposal_date.nil?
@@ -459,6 +491,56 @@ module Kendama
       end
 
       @sequence_number = sequence_number
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] process Object to be assigned
+    def process=(process)
+      validator = EnumAttributeValidator.new('String', ["01", "02", "03", "04", "99"])
+      unless validator.valid?(process)
+        fail ArgumentError, "invalid value for \"process\", must be one of #{validator.allowable_values}."
+      end
+      @process = process
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] correct Object to be assigned
+    def correct=(correct)
+      validator = EnumAttributeValidator.new('String', ["0", "1", ""])
+      unless validator.valid?(correct)
+        fail ArgumentError, "invalid value for \"correct\", must be one of #{validator.allowable_values}."
+      end
+      @correct = correct
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] kind Object to be assigned
+    def kind=(kind)
+      validator = EnumAttributeValidator.new('String', ["1", "2"])
+      unless validator.valid?(kind)
+        fail ArgumentError, "invalid value for \"kind\", must be one of #{validator.allowable_values}."
+      end
+      @kind = kind
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] country Object to be assigned
+    def country=(country)
+      validator = EnumAttributeValidator.new('String', ["1", "2", "3"])
+      unless validator.valid?(country)
+        fail ArgumentError, "invalid value for \"country\", must be one of #{validator.allowable_values}."
+      end
+      @country = country
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] latest Object to be assigned
+    def latest=(latest)
+      validator = EnumAttributeValidator.new('String', ["0", "1"])
+      unless validator.valid?(latest)
+        fail ArgumentError, "invalid value for \"latest\", must be one of #{validator.allowable_values}."
+      end
+      @latest = latest
     end
 
     # Custom attribute writer method with validation
