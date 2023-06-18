@@ -31,7 +31,7 @@ Gem::Specification.new do |s|
 
   s.metadata["homepage_uri"] = s.homepage
   s.metadata["source_code_uri"] = "https://github.com/uichi/kendama"
-  s.metadata["changelog_uri"] = "https://github.com/uichi/kendama/blob/develop/CHANGELOG.md"
+  s.metadata["changelog_uri"] = "https://github.com/uichi/kendama/blob/main/CHANGELOG.md"
 
   # Uncomment to register a new dependency of your gem
   # spec.add_dependency "example-gem", "~> 1.0"
