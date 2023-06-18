@@ -1,0 +1,179 @@
+components:
+  schemas:
+    ResponseBody:
+      type: object
+      properties:
+        lastUpdateDate:
+          type: string
+          description: 最終更新年月日
+          example: "2021-11-01"
+          format: date
+        count:
+          type: string
+          description: 総件数
+          example: 1
+          minLength: 1
+          maxLength: 8
+        divideNumber:
+          type: string
+          description: 分割番号
+          example: 1
+          minLength: 1
+          maxLength: 6
+        divideSize:
+          type: string
+          description: 分割数
+          example: 1
+          minLength: 1
+          maxLength: 6
+        announcement:
+          type: array
+          items:
+            $ref: "#/components/schemas/Announcement"
+
+    Announcement:
+      type: object
+      properties:
+        sequenceNumber:
+          type: string
+          description: 一連番号
+          example: 1
+          minLength: 1
+          maxLength: 8
+        registratedNumber:
+          type: string
+          description: 登録番号
+          example: T8040001999011
+        process:
+          type: string
+          description: 事業者処理区分
+          example: 01
+          enum:
+          - "01"
+          - "02"
+          - "03"
+          - "04"
+          - "99"
+        correct:
+          type: string
+          description: 訂正区分
+          example: 0
+          enum:
+          - 0
+          - 1
+          - ""
+        kind:
+          type: string
+          description: 人格区分
+          example: 2
+          enum:
+          - 1
+          - 2
+        country:
+          type: string
+          description: 国内外区分
+          example: 1
+          enum:
+          - 1
+          - 2
+          - 3
+        latest:
+          type: string
+          description: 最新履歴
+          example: 1
+          enum:
+          - 0
+          - 1
+        registrationDate:
+          type: string
+          description: 登録年月日
+          example: "2023-10-01"
+          format: date
+        updateDate:
+          type: string
+          description: 更新年月日
+          example: "2021-11-01"
+          format: date
+        disposalDate:
+          type: string
+          description: 取消年月日
+        expireDate:
+          type: string
+          description: 失効年月日
+        address:
+          type: string
+          description: 本店又は主たる事務所の所在地（法人）
+          example: 北海道札幌市中央区大通西１０丁目
+          maxLength: 600
+        addressPrefectureCode:
+          type: string
+          description: 本店又は主たる事務所の所在地都道府県コード（法人）
+          example: 01
+        addressCityCode:
+          type: string
+          description: 本店又は主たる事務所の所在地市区町村コード（法人）
+          example: 101
+        addressRequest:
+          type: string
+          description: 本店又は主たる事務所の所在地（公表申出）
+          maxLength: 600
+        addressRequestPrefectureCode:
+          type: string
+          description: 本店又は主たる事務所の所在地都道府県コード（公表申出）
+        addressRequestCityCode:
+          type: string
+          description: 本店又は主たる事務所の所在地市区町村コード（公表申出）
+        kana:
+          type: string
+          description: 日本語（カナ）
+          maxLength: 500
+        name:
+          type: string
+          description: 氏名又は名称
+          example: 株式会社インボイス公表
+          maxLength: 300
+        addressInside:
+          type: string
+          description: 国内において行う資産の譲渡等に係る事務所、事業所その他これらに準ずるものの所在地
+          maxLength: 300
+        addressInsidePrefectureCode:
+          type: string
+          description: 国内において行う資産の譲渡等に係る事務所、事業所その他これらに準ずるものの所在地都道府県コード
+        addressInsideCityCode:
+          type: string
+          description: 国内において行う資産の譲渡等に係る事務所、事業所その他これらに準ずるものの所在地市区町村コード
+        tradeName:
+          type: string
+          description: 主たる屋号
+          maxLength: 200
+        popularName_previousName:
+          type: string
+          description: 通称・旧姓
+          maxLength: 200
+      required:
+        - sequenceNumber
+        - registratedNumber
+        - process
+        - correct
+        - kind
+        - country
+        - latest
+        - registrationDate
+        - updateDate
+        - disposalDate
+        - expireDate
+        - address
+        - addressPrefectureCode
+        - addressCityCode
+        - addressRequest
+        - addressRequestPrefectureCode
+        - addressRequestCityCode
+        - kana
+        - name
+        - addressInside
+        - addressInsidePrefectureCod
+        - addressInsideCityCode
+        - tradeName
+        - popularName_previousName
+        - required
+
