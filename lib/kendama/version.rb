@@ -11,5 +11,5 @@ OpenAPI Generator version: 6.6.0
 =end
 
 module Kendama
-  VERSION = '0.2.2'
+  VERSION = '0.2.3'
 end

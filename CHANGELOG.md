@@ -1,3 +1,7 @@
+# [0.2.3] - 2023-06-18
+- Dependabotのtarget-branchをmainに変更
+- changelog_uriをmainブランチに向ける
+
 # [0.2.2] - 2023-06-13
 
 - dependabotの設定を追加
