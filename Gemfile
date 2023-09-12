@@ -2,7 +2,8 @@ source 'https://rubygems.org'
 
 gemspec
 
-gem "rake", "~> 13.0"
-gem "rspec", "~> 3.0"
-gem "rubocop", "~> 1.56"
-gem 'pry-byebug'
+group :development, :test do
+  gem 'rake', '~> 13.0.1'
+  gem 'pry-byebug'
+  gem 'rubocop', '~> 0.66.0'
+end

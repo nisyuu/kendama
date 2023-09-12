@@ -23,8 +23,3 @@
 #!docs/README.md
 
 .gitignore
-.rspec
-.rubocop.yml
-Gemfile
-kendama.gemspec
-Rakefile
