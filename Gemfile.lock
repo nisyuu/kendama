@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    kendama (0.2.3)
+    kendama (1.0.0)
       typhoeus (~> 1.0, >= 1.0.1)
 
 GEM
