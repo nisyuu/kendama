@@ -1,3 +1,6 @@
+# [1.0.0] - 2023-09-12
+- openapi-generator 7.0.0でクライアントAPIを生成
+
 # [0.2.3] - 2023-06-18
 - Dependabotのtarget-branchをmainに変更
 - changelog_uriをmainブランチに向ける
