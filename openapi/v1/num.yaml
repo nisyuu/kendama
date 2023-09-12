@@ -1,0 +1,66 @@
+openapi: 3.0.3
+info:
+  title: 国税庁API
+  description: 国税庁が提供するインボイス制度適格請求書発行事業者公表システムWeb-APIを使用するためのクライアントAPI(https://www.invoice-kohyo.nta.go.jp/web-api/index.html)
+  version: 1.0.0
+paths:
+  "/1/num":
+    get:
+      operationId: getAnnouncementByNumber
+      summary: 登録番号を指定して情報を取得
+      description: 指定された登録番号に係る登録年月日、取消年月日及び失効年月日に紐づく最新情報（履歴情報は任意）を取得
+      tags:
+        - v1
+      parameters:
+        - $ref: "#/components/parameters/Id"
+        - $ref: "#/components/parameters/Number"
+        - $ref: "#/components/parameters/Type"
+        - $ref: "#/components/parameters/History"
+      responses:
+        "200":
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: "./announcement.yaml#/components/schemas/ResponseBody"
+
+components:
+  parameters:
+    Id:
+      in: query
+      name: id
+      required: true
+      schema:
+        type: string
+        description: アプリケーションID
+    Number:
+      in: query
+      name: number
+      required: true
+      schema:
+        type: string
+        description: 登録番号
+        example: T8040001999011
+    Type:
+      in: query
+      name: type
+      required: true
+      schema:
+        type: string
+        description: 応答形式
+        example: 21
+        enum:
+          # - 01
+          # - 11
+          - 21
+        default: 21
+    History:
+      in: query
+      name: history
+      schema:
+        type: string
+        description: 履歴情報要否
+        example: 0
+        enum:
+          - 0
+          - 1
