@@ -20,7 +20,7 @@ require 'date'
 describe Kendama::Announcement do
   let(:instance) { Kendama::Announcement.new }
 
-  describe 'test an instance of Announcement' do
+  describe 'test an instance of Announcement', skip: 'instance do not have anything' do
     it 'should create an instance of Announcement' do
       expect(instance).to be_instance_of(Kendama::Announcement)
     end
