@@ -6,9 +6,9 @@ AllCops:
   # to ignore them, so only the ones explicitly set in this file are enabled.
   DisabledByDefault: true
   Exclude:
-    - "**/templates/**/*"
-    - "**/vendor/**/*"
-    - "actionpack/lib/action_dispatch/journey/parser.rb"
+    - '**/templates/**/*'
+    - '**/vendor/**/*'
+    - 'actionpack/lib/action_dispatch/journey/parser.rb'
 
 # Prefer &&/|| over and/or.
 Style/AndOr:
@@ -29,16 +29,16 @@ Layout/EmptyLineAfterMagicComment:
   Enabled: true
 
 # In a regular class definition, no empty lines around the body.
-# Layout/EmptyLinesAroundClassBody:
-#   Enabled: true
+Layout/EmptyLinesAroundClassBody:
+  Enabled: true
 
 # In a regular method definition, no empty lines around the body.
 Layout/EmptyLinesAroundMethodBody:
   Enabled: true
 
 # In a regular module definition, no empty lines around the body.
-# Layout/EmptyLinesAroundModuleBody:
-#   Enabled: true
+Layout/EmptyLinesAroundModuleBody:
+  Enabled: true
 
 Layout/FirstArgumentIndentation:
   Enabled: true
@@ -54,8 +54,8 @@ Layout/IndentationConsistency:
   EnforcedStyle: indented_internal_methods
 
 # Two spaces, no tabs (for indentation).
-# Layout/IndentationWidth:
-#   Enabled: true
+Layout/IndentationWidth:
+  Enabled: true
 
 Layout/LeadingCommentSpace:
   Enabled: true
@@ -72,14 +72,14 @@ Layout/SpaceAroundEqualsInParameterDefault:
 Layout/SpaceAroundKeyword:
   Enabled: true
 
-# Layout/SpaceAroundOperators:
-#   Enabled: true
+Layout/SpaceAroundOperators:
+  Enabled: true
 
 Layout/SpaceBeforeComma:
-  Enabled: true
+    Enabled: true
 
 Layout/SpaceBeforeFirstArg:
-  Enabled: true
+    Enabled: true
 
 Style/DefWithParentheses:
   Enabled: true
@@ -101,16 +101,16 @@ Layout/SpaceInsideBlockBraces:
   Enabled: true
 
 # Use `{ a: 1 }` not `{a:1}`.
-# Layout/SpaceInsideHashLiteralBraces:
-#   Enabled: true
+Layout/SpaceInsideHashLiteralBraces:
+  Enabled: true
 
 Layout/SpaceInsideParens:
   Enabled: true
 
 # Check quotes usage according to lint rule below.
-# Style/StringLiterals:
-#   Enabled: true
-#   EnforcedStyle: single_quotes
+#Style/StringLiterals:
+#  Enabled: true
+#  EnforcedStyle: single_quotes
 
 # Detect hard tabs, no hard tabs.
 Layout/IndentationStyle:
@@ -146,10 +146,3 @@ Style/RedundantReturn:
 Style/Semicolon:
   Enabled: true
   AllowAsExpressionSeparator: true
-
-# Style/StringLiteralsInInterpolation:
-#   Enabled: true
-#   EnforcedStyle: double_quotes
-
-# Layout/LineLength:
-#   Max: 120
