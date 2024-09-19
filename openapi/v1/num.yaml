@@ -2,7 +2,7 @@ openapi: 3.0.3
 info:
   title: 国税庁API
   description: 国税庁が提供するインボイス制度適格請求書発行事業者公表システムWeb-APIを使用するためのクライアントAPI(https://www.invoice-kohyo.nta.go.jp/web-api/index.html)
-  version: 1.0.0
+  version: 1.0.1
 paths:
   "/1/num":
     get:
