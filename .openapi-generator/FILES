@@ -14,10 +14,9 @@ lib/kendama.rb
 lib/kendama/api/v1_api.rb
 lib/kendama/api_client.rb
 lib/kendama/api_error.rb
+lib/kendama/api_model_base.rb
 lib/kendama/configuration.rb
 lib/kendama/models/announcement.rb
 lib/kendama/models/response_body.rb
 lib/kendama/version.rb
-spec/api_client_spec.rb
-spec/configuration_spec.rb
 spec/spec_helper.rb
