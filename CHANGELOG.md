@@ -1,10 +1,18 @@
+# [1.0.2] - 2026-05-04
+
+- 依存gemのバージョンを更新
+- authorの情報を更新
+
 # [1.0.1] - 2024-09-19
+
 - 依存gemのバージョンを更新
 
 # [1.0.0] - 2023-09-12
+
 - openapi-generator 7.0.0でクライアントAPIを生成
 
 # [0.2.3] - 2023-06-18
+
 - Dependabotのtarget-branchをmainに変更
 - changelog_uriをmainブランチに向ける
 
