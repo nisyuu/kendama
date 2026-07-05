@@ -5,5 +5,5 @@ gemspec
 group :development, :test do
   gem 'rake', '~> 13.4'
   gem 'pry-byebug'
-  gem 'rubocop', '~> 0.66.0'
+  gem 'rubocop', '~> 1.88.1'
 end
